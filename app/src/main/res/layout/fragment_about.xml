@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.citizen.About"
+   android:background="#181F23"
+    >
+
+
+
+    <RelativeLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+    <TextView
+        android:id="@+id/lang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginRight="20dp"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:layout_alignParentRight="true"/>
+        >
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/keralapolice"
+        />
+    <View
+        android:id="@+id/v"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#D3000000"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/abhaya_libre"
+            android:text="About Kerala Police"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textSize="30sp" />
+</RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#fff"
+        android:text="@string/about_kerala_police"/>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">CrimeReportAndroidPhp</string>
+    <string name="title_activity_login_home">MainActivity</string>
+    <string name="title_citizen">Citizen</string>
+    <string name="title_police">Police</string>
+    <string name="title_activity_citizen_home">CitizenHome</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_complaint">Complaint</string>
+    <string name="menu_pcc">PCC</string>
+    <string name="menu_ipc">IPC</string>
+    <string name="menu_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dutyofpolice">സംസ്ഥാനത്ത് താമസിക്കുന്നവരും, ജോലി ചെയ്യുന്നവരും, സന്ദർശകരുമായ എല്ലാ വിഭാഗം ജനങ്ങൾക്കും മികച്ച നിലവാരത്തിലുള്ള പോലീസ് സേവനങ്ങൾ നൽകുവാൻ കേരള പോലീസ് പ്രതിജ്ഞാബദ്ധമാണ്. പൗരൻമാരുടെ അവകാശങ്ങൾ മാനിച്ചുകൊണ്ടും അന്തസ്സ് ഉയർത്തിക്കൊണ്ടും സാമൂഹ്യ സുരക്ഷ ഉറപ്പുവരുത്തുക, ക്രമസമാധാനം പാലിക്കുക എന്നീ കർത്തവ്യങ്ങൾ നിർവഹിക്കുന്നതിനായുളള ശ്രമങ്ങൾ ഞങ്ങൾ നിരന്തരം വിലയിരുത്തി കൂടുതൽ മെച്ചപ്പെടുത്തുന്നുണ്ട്. വ്യക്തികൾ, കുടുംബങ്ങൾ, സമുദായങ്ങൾ മുതലായവയുടെ അവകാശങ്ങളും ചുമതലകളും സന്തുലിതാവസ്ഥയിലുള്ള സുരക്ഷിതമായ ഒരു സമൂഹം വാർത്തെടുക്കുകയാണ് കേരള പോലീസിന്റെ കർത്തവ്യം.</string>
+    <string name="menu_about">About Us</string>
+    <string name="about_kerala_police"><![CDATA[Kerala Police has a reputation for being one of the best-managed state police forces in the country and is one of the top-ranking states in terms of maintenance of law and order. Kerala police is also one of the first police departments in South Asia to implement community policing through an enactment. It is popularly known as &lsquoJanamaithri&rsquo policing, which literally translates to people-friendly policing Kerala Police registers the highest number of cognizable offences in the country, next only to the National Capital Territory of Delhi. This has to be viewed in perspective of the relatively peaceful image of the state. This is a reflection of the good practice adopted by the state in registering every cognizable instance reported at the Police station level and dealing with the crimes and offenders legally. Kerala Police has been the fountain head of several police reforms and innovative schemes in the country. A new Kerala Police Act enacted in 2011 was a guiding light for many other state police forces in the country to draft their own local Police Acts. The avant-garde provisions of the Act, which enable setting up of Police Establishment Board, Police Complaints Authority, State Security Commission, Police Welfare Bureau, Community Policing, etc., have given it a status of a modern day treatise on Policing philosophy. Student Police Cadet Scheme piloted by the Kerala state during 2008-2010, to positively tackle adolescent deviant behavior and encourage good citizenship values among youth has been endorsed as a plan scheme by Ministry of Home Affairs and has now been adopted by many other states in India. Similarly, initiatives such as Kerala Police Cyberdome, a PPP model in cyber governance and Kerala Police CoCoN, a flagship annual conference on cyber security and digital strategies to tackle crimes, have earned a respectable place in the hearts of all stakeholders. The high literacy levels in Kerala society are also reflected in the high levels of educational qualification among the cutting edge level police officials of Kerala Police. Their demeanour, turn-out and skill levels in dealing with citizens, mirror their education levels. The recruitment of constabulary level officials done through a stringent competitive exam by an independent Public Service Commission echoes the ethos of Kerala society for transparency and fairness. The newly recruited Police officials are trained in the latest police subjects, both indoor and outdoor, and nurtured to live up to the motto of Kerala Police.]]></string>
+
+    <string-array name="district_arrays">
+        <item>Thiruvananthapuram</item>
+        <item>Kollam</item>
+        <item>Pathanamthitta</item>
+        <item>Alappuzha</item>
+        <item>Kottayam</item>
+        <item>Idukki</item>
+        <item>Ernakulam</item>
+        <item>Thrissur</item>
+        <item>Palakad</item>
+        <item>Kozhikode</item>
+        <item>Malappuram</item>
+        <item>Vayanad</item>
+        <item>Kannur</item>
+        <item>Kasargod</item>
+    </string-array>
+    <string name="title_activity_police_home">MainActivity</string>
+
+</resources>

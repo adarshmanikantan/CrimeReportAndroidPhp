@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_reply_blue"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:id="@+id/file_complaint_layout"
+    tools:context=".ui.police.EncryptedPoliceComplaintActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="   District"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            app:boxBackgroundColor="@color/dark_reply_blue"
+            app:hintTextColor="@color/secondary_color_orange"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_complaint_district"
+                android:focusable="false"
+                android:cursorVisible="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="   Police Station"
+            android:layout_marginBottom="15dp"
+            app:boxBackgroundColor="@color/dark_reply_blue"
+            app:hintTextColor="@color/secondary_color_orange"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_complaint_ps"
+                android:focusable="false"
+                android:cursorVisible="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/secondary_color_orange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Complaint Type"
+            android:layout_marginBottom="15dp"
+            app:boxBackgroundColor="@color/dark_reply_blue"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/view_complaint_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:cursorVisible="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/secondary_color_orange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Place of Occurence"
+            android:layout_marginBottom="15dp"
+            app:boxBackgroundColor="@color/dark_reply_blue"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view_place_of_occurence"
+                android:focusable="false"
+                android:cursorVisible="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            >
+            <com.google.android.material.textfield.TextInputLayout
+                app:hintTextColor="@color/secondary_color_orange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:hint="Date"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="15dp"
+                app:boxBackgroundColor="@color/dark_reply_blue"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/view_date"
+                    android:focusable="false"
+                    android:cursorVisible="false"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                app:hintTextColor="@color/secondary_color_orange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Time"
+                android:layout_weight="0.5"
+                android:layout_marginBottom="15dp"
+                app:boxBackgroundColor="@color/dark_reply_blue"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/view_time"
+                    android:focusable="false"
+                    android:cursorVisible="false"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/secondary_color_orange"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:hint="Complaint Details"
+            app:boxBackgroundColor="@color/dark_reply_blue"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/view_complaint_details"
+                android:focusable="false"
+                android:cursorVisible="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Decrypt"
+            android:onClick="decryptComplaint"
+            android:id="@+id/decrypt_btn"
+            />
+        <Button
+            android:id="@+id/verify_complaint_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Verify Complaint"
+            android:onClick="verifyComplaint"
+            />
+        <Button
+            android:id="@+id/view_fir_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Generate FIR"
+            />
+    </LinearLayout>
+</ScrollView>

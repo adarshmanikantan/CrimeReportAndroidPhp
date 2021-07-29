@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.citizen.pcc.PCCFragment"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center"
+    android:background="@color/primary_reply_blue">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/file_complaint_cv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardBackgroundColor="@color/dark_reply_blue"
+        app:cardElevation="1dp"
+        android:layout_marginBottom="30dp"
+        app:rippleColor="@color/primary_reply_blue"
+        >
+        <LinearLayout
+            android:id="@+id/requestpcclayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/complaint"
+                android:layout_marginRight="30dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Request for \nPolice Clearance Certificate"
+                android:textColor="@color/secondary_color_orange"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/pcc_recyclerview"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
+</LinearLayout>

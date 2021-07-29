@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Police.GenerateFir">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fir_number"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="FIR number"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fir_number_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fir_date"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fir_number"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="FIR date"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fir_date_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:onClick="setFirDate"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fir_number"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="FIR Time"
+            app:startIconTint="#E20000"
+            android:layout_toRightOf="@id/fir_date"
+            android:layout_marginRight="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fir_time_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="setFirTime"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ipc_act"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fir_date"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="IPC Act"
+            app:startIconTint="#E20000"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fir_ipcact_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ipc_session"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fir_date"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="IPC Section"
+            app:startIconTint="#E20000"
+            android:layout_toRightOf="@id/ipc_act"
+            android:layout_marginRight="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ipc_session_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/day"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ipc_act"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Day"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/day_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/timefrom"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/datefrom"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Time From:"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/time_from_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="setTimeFrom"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/timeto"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Time To:"
+            android:layout_below="@id/datefrom"
+            app:startIconTint="#E20000"
+            android:layout_toRightOf="@id/timefrom"
+            android:layout_marginLeft="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/time_to_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="setTimeTo"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/datefrom"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/day"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Date From:"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/date_from_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="setDateFrom"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dateto"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Date To:"
+            android:layout_below="@id/day"
+            app:startIconTint="#E20000"
+            android:layout_toRightOf="@id/datefrom"
+            android:layout_marginLeft="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/date_to_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="setDateTo"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/diaryentry"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timefrom"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Diary Entry No:"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/diaryentry_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/entrytime"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Entry Time:"
+            android:layout_below="@id/timeto"
+            app:startIconTint="#E20000"
+            android:layout_toRightOf="@id/datefrom"
+            android:layout_marginLeft="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entrytime_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="setEntryTime"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Type of Information:"
+            android:layout_below="@id/entrytime"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/type_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Distance from Police Station:"
+            android:layout_below="@id/type"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/distance_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/beat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Beat No:"
+            android:layout_below="@id/distance"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/beat_no_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Address:"
+            android:layout_below="@id/beat"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/address_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/complaintdetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Complaint Details:"
+            android:layout_below="@id/address"
+            app:startIconTint="#E20000"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:boxStrokeColor="@color/colorAccent"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/complaintdetails_field"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:text="Submit"
+            android:onClick="nextClick"
+            android:layout_below="@id/complaintdetails"/>
+    </RelativeLayout>
+</ScrollView>

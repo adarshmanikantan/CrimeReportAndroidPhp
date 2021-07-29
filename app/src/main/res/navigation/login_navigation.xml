@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_citizen_login">
+
+    <fragment
+        android:id="@+id/navigation_citizen_login"
+        android:name="com.adarsh.crimereportandroidphp.ui.citizen.CitizenLoginFragment"
+        android:label="@string/title_citizen"
+        tools:layout="@layout/fragment_citizen_login" />
+
+    <fragment
+        android:id="@+id/navigation_police_login"
+        android:name="com.adarsh.crimereportandroidphp.ui.police.PoliceLoginFragment"
+        android:label="@string/title_police"
+        tools:layout="@layout/fragment_police_login" />
+
+
+</navigation>
