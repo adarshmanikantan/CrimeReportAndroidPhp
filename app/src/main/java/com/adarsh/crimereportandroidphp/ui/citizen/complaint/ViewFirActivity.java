@@ -1,12 +1,15 @@
 package com.adarsh.crimereportandroidphp.ui.citizen.complaint;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -36,6 +39,7 @@ import retrofit2.Response;
 
 public class ViewFirActivity extends AppCompatActivity {
     String firId;
+    private static final int MY_STORAGE_PERMISSION_CODE = 100;
     private ImageView imgview;
     private TextView fir;
     private TextView section;
@@ -182,9 +186,15 @@ public class ViewFirActivity extends AppCompatActivity {
     }
 
     public void savePdf(View view) {
-        bitmap = loadBitmapFromView(relativeLayout, relativeLayout.getWidth(), relativeLayout.getHeight());
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            createPdf();
+        if (getApplication().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+        {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_STORAGE_PERMISSION_CODE);
+        }
+        else {
+            bitmap = loadBitmapFromView(relativeLayout, relativeLayout.getWidth(), relativeLayout.getHeight());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                createPdf();
+            }
         }
     }
     public static Bitmap loadBitmapFromView(View v, int width, int height) {
@@ -224,14 +234,14 @@ public class ViewFirActivity extends AppCompatActivity {
             // close the document
             document.close();
             Toast.makeText(this, "PDF is created!!!", Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(getApplicationContext(), PoliceHome.class);
-            startActivity(intent);
+//            Intent intent=new Intent(getApplicationContext(), PoliceHome.class);
+//            startActivity(intent);
             openGeneratedPDF();
 
 
         }catch (Exception e){
 
-            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -248,6 +258,25 @@ public class ViewFirActivity extends AppCompatActivity {
                 startActivity(intent);
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(ViewFirActivity.this, "No Application available to view pdf", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == MY_STORAGE_PERMISSION_CODE)
+        {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            {
+                Toast.makeText(getApplicationContext(), "storage permission granted", Toast.LENGTH_LONG).show();
+                bitmap = loadBitmapFromView(relativeLayout, relativeLayout.getWidth(), relativeLayout.getHeight());
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    createPdf();
+                }
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "storage permission denied", Toast.LENGTH_LONG).show();
             }
         }
     }

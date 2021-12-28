@@ -1,86 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.citizen.CitizenLoginFragment"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:background="@color/primary_reply_blue"
+    android:background="#000"
+    tools:context=".ui.citizen.CitizenLoginFragment" >
 
-    >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/hind_bold"
-        android:text="सत्यमेव\n        जयते"
-        android:layout_gravity="left|top"
-        android:textColor="#fff"
-        android:textSize="50sp" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hammer"
+        android:background="#000"
+        android:gravity="center"
         android:orientation="vertical"
-        android:gravity="center">
+        android:padding="20dp">
+
         <com.google.android.material.textfield.TextInputLayout
-            app:startIconDrawable="@drawable/ic_baseline_email_24"
-            app:startIconContentDescription="content_description_end_icon"
-            app:startIconTint="@color/secondary_color_orange"
+            android:id="@+id/text_input_Latyot"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_input_Latyot"
-            app:endIconMode="clear_text"
-            app:endIconTint="@color/secondary_color_orange"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Email"
             android:layout_marginBottom="20dp"
-            app:hintTextColor="#fff">
+            android:hint="Email"
+            app:boxStrokeWidth="0.5dp"
+            app:boxStrokeColor="#f5f097"
+            app:endIconMode="clear_text"
+            app:endIconTint="#f5f097"
+            app:hintTextColor="#fff"
+            android:textColorHint="#B3ACAC"
+            app:startIconContentDescription="content_description_end_icon"
+            app:startIconDrawable="@drawable/ic_baseline_email_24"
+            app:startIconTint="#f5f097">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_email_edt"
+                android:textColorHint="#BDBABA"
+                android:textColor="#fff"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
-            app:hintTextColor="#fff"
-            app:startIconDrawable="@drawable/ic_baseline_lock_24"
-            app:startIconContentDescription="content_password_icon"
+            android:id="@+id/password_inputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password_inputLayout"
-            app:endIconMode="password_toggle"
             android:hint="Password"
-            app:startIconTint="@color/secondary_color_orange"
-            app:endIconTint="@color/secondary_color_orange"
             app:counterEnabled="true"
             app:counterMaxLength="8"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:endIconMode="password_toggle"
+            app:endIconTint="#f5f097"
+            app:hintTextColor="#fff"
+            android:textColorHint="#B3ACAC"
+            app:boxStrokeWidth="0.5dp"
+            app:boxStrokeColor="#f5f097"
+            app:startIconContentDescription="content_password_icon"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24"
+            app:startIconTint="#f5f097">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_password_edt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
+                android:textColorHint="#BDBABA"
+                android:textColor="#fff"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:backgroundTint="@color/secondary_color_orange"
             android:layout_marginTop="20dp"
-            />
+            android:backgroundTint="#5a3626"
+            android:text="Login" />
+
         <Button
             android:id="@+id/registerbtn"
-            android:padding="20dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New user Register here"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/secondary_color_orange"
+            android:padding="20dp"
+            android:textSize="15sp"
+            android:text="New user Register here"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+            android:textColor="#f5f097" />
     </LinearLayout>
-</LinearLayout>
 
+
+    <TextView
+        android:id="@+id/satyameva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top"
+        android:layout_margin="20dp"
+        android:elevation="20dp"
+        android:fontFamily="@font/hind_bold"
+        android:text="सत्यमेव\n        जयते"
+        android:textColor="#f5f097"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/hammer"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/hammer" />
+</RelativeLayout>

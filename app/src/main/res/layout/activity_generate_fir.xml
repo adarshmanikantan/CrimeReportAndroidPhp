@@ -18,13 +18,17 @@
             app:startIconTint="#E20000"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:boxStrokeColor="@color/colorAccent"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fir_number_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -38,15 +42,19 @@
             app:startIconTint="#E20000"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fir_date_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
+                android:focusable="false"
+                android:cursorVisible="false"
                 android:onClick="setFirDate"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -59,13 +67,17 @@
             app:startIconTint="#E20000"
             android:layout_toRightOf="@id/fir_date"
             android:layout_marginRight="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fir_time_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="false"
+                android:textColor="#fff"
+                android:cursorVisible="false"
                 android:onClick="setFirTime"
                 />
 
@@ -80,13 +92,15 @@
             app:startIconTint="#E20000"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fir_ipcact_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -100,13 +114,15 @@
             app:startIconTint="#E20000"
             android:layout_toRightOf="@id/ipc_act"
             android:layout_marginRight="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ipc_session_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -115,17 +131,21 @@
             android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/ipc_act"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="Day"
             app:startIconTint="#E20000"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            app:boxBackgroundMode="outline"
             android:layout_marginLeft="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/day_field"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/day_field"
+                android:textColor="@color/white"
+                android:focusable="false"
+                android:cursorVisible="false"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -138,14 +158,18 @@
             android:hint="Time From:"
             app:startIconTint="#E20000"
             android:layout_marginLeft="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/time_from_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="setTimeFrom"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -159,14 +183,18 @@
             app:startIconTint="#E20000"
             android:layout_toRightOf="@id/timefrom"
             android:layout_marginLeft="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/time_to_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="setTimeTo"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -179,14 +207,18 @@
             android:hint="Date From:"
             app:startIconTint="#E20000"
             android:layout_marginLeft="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/date_from_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="setDateFrom"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -200,14 +232,18 @@
             app:startIconTint="#E20000"
             android:layout_toRightOf="@id/datefrom"
             android:layout_marginLeft="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/date_to_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="setDateTo"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -220,14 +256,16 @@
             android:hint="Diary Entry No:"
             app:startIconTint="#E20000"
             android:layout_marginLeft="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/diaryentry_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -241,14 +279,18 @@
             app:startIconTint="#E20000"
             android:layout_toRightOf="@id/datefrom"
             android:layout_marginLeft="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/entrytime_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="setEntryTime"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -262,12 +304,14 @@
             app:startIconTint="#E20000"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/type_field"
                 android:layout_width="match_parent"
+                android:textColor="#fff"
                 android:layout_height="wrap_content"
                 />
 
@@ -282,13 +326,15 @@
             app:startIconTint="#E20000"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/distance_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -302,14 +348,16 @@
             app:startIconTint="#E20000"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/beat_no_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -323,13 +371,15 @@
             app:startIconTint="#E20000"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/address_edt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -343,13 +393,15 @@
             app:startIconTint="#E20000"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:boxStrokeColor="@color/colorAccent"
-            app:errorEnabled="true">
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/complaintdetails_field"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
+                android:textColor="#fff"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -358,6 +410,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:text="Submit"
+            android:backgroundTint="@color/brown"
             android:onClick="nextClick"
             android:layout_below="@id/complaintdetails"/>
     </RelativeLayout>

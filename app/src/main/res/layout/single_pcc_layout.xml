@@ -1,20 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:gravity="center"
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="30dp"
     android:layout_marginBottom="30dp"
-    android:background="@color/secondary_reply_blue">
-    <TextView
-        android:id="@+id/policestation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/secondary_color_orange"/>
-    <TextView
-        android:id="@+id/purpose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/secondary_color_orange"/>
-</LinearLayout>
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/yellowbg"
+        android:scaleType="centerCrop"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:id="@+id/pcc_type_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/purpose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="PCC for Education"
+                android:textColor="#000"
+                android:fontFamily="@font/roboto_slab"
+                android:layout_marginRight="10dp"
+                android:textSize="15sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#B4FFFFFF"
+                android:layout_marginTop="5dp"
+                />
+<TextView
+    android:id="@+id/pcc_status"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="Your Request is Verified"
+    />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/policestation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/roboto_slab"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            tools:text="Crime Stopper,Thiruvananthapuram" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

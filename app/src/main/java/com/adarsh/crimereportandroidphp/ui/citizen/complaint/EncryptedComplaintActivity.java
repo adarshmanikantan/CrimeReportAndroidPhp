@@ -145,7 +145,7 @@ public class EncryptedComplaintActivity extends AppCompatActivity {
                                     viewFirBtn.setVisibility(View.VISIBLE);
                                 }
                             } catch (Exception e) {
-                                Toast.makeText(EncryptedComplaintActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(EncryptedComplaintActivity.this, "This one"+e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         } else {
 

@@ -35,6 +35,14 @@ public class ViewPccAdapter extends RecyclerView.Adapter<ViewPccAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.policestation.setText(viewPccByCitizenModel.getPcc_details()[position].getPolice_station()+" , "+viewPccByCitizenModel.getPcc_details()[position].getDistrict());
       holder.purpose.setText("PCC Application for "+viewPccByCitizenModel.getPcc_details()[position].getPurpose());
+      if(viewPccByCitizenModel.getPcc_details()[position].getVerify_status().equals("1"))
+      {
+          holder.status.setText("Your Request is Verified");
+      }
+      else
+      {
+          holder.status.setText("Your Request will be Verified soon");
+      }
 
     }
 
@@ -45,11 +53,12 @@ public class ViewPccAdapter extends RecyclerView.Adapter<ViewPccAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder
     {
-        TextView purpose,policestation;
+        TextView purpose,policestation,status;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             policestation=itemView.findViewById(R.id.policestation);
             purpose=itemView.findViewById(R.id.purpose);
+            status=itemView.findViewById(R.id.pcc_status);
         }
     }
 }

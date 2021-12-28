@@ -8,13 +8,13 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
-    android:background="@color/primary_reply_blue">
+    android:background="@color/black">
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/file_complaint_cv"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:cardBackgroundColor="@color/dark_reply_blue"
+        android:layout_height="150dp"
         app:cardElevation="1dp"
+        app:cardCornerRadius="20dp"
         android:layout_marginBottom="30dp"
         app:rippleColor="@color/primary_reply_blue"
         >
@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:background="@drawable/darkbluebg"
             >
             <ImageView
                 android:layout_width="100dp"
@@ -33,12 +34,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_slab"
                 android:text="Request for \nPolice Clearance Certificate"
-                android:textColor="@color/secondary_color_orange"/>
+                android:textColor="@color/white"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
-   <androidx.recyclerview.widget.RecyclerView
+   <com.todkars.shimmer.ShimmerRecyclerView
        android:id="@+id/pcc_recyclerview"
        android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:layout_marginTop="20dp"
+       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+       app:shimmer_recycler_layout="@layout/single_pcc_layout"/>
 </LinearLayout>

@@ -28,4 +28,8 @@ public class LoginHome extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+    }
 }

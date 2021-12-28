@@ -2,6 +2,7 @@ package com.adarsh.crimereportandroidphp.ui.citizen.complaint;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,7 +41,10 @@ public class ComplaintFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_complaint, container, false);
 
         initView(root);
+        Toolbar toolbar=getActivity().findViewById(R.id.toolbar);
+        toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
         recyclerview.showShimmer();
+
         SharedPreferences sharedPreferences = getContext().getSharedPreferences("pref", Context.MODE_PRIVATE);
 
         fileComplaintCv.setOnClickListener(new View.OnClickListener() {

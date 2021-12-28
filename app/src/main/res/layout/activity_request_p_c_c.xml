@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.citizen.pcc.RequestPCCActivity"
     android:padding="20dp"
-    android:background="@color/primary_reply_blue">
+    android:background="#000">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,14 +28,16 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            app:hintTextColor="@color/secondary_color_orange"
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
             >
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/pcc_district"
                 android:focusable="false"
+                android:textColor="@color/white"
                 android:cursorVisible="false"
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -45,13 +47,15 @@
             android:hint="   Police Station"
             android:layout_marginBottom="15dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            app:hintTextColor="@color/secondary_color_orange"
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
             >
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/pcc_ps"
+                android:textColor="@color/white"
                 android:focusable="false"
                 android:cursorVisible="false"
                 />
@@ -63,71 +67,91 @@
             android:layout_height="100dp"
             android:hint="1. Name and Aliases"
             android:layout_marginTop="20dp"
-            app:boxBackgroundColor="@color/dark_reply_blue">
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:id="@+id/name_and_aliases"
             android:layout_height="100dp"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="2. Father's/Mother's Name"
-            app:boxBackgroundColor="@color/dark_reply_blue"
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
             android:layout_marginTop="20dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/parent_name"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="3. Date of Birth"
-            app:boxBackgroundColor="@color/dark_reply_blue"
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
             android:layout_marginTop="20dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pcc_dob"
+            android:textColor="@color/white"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:onClick="selectDate"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="4. Passport No.and Validity"
-            app:boxBackgroundColor="@color/dark_reply_blue"
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
             android:layout_marginTop="20dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/psprt_no"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="5. Permanent Address"
-            app:boxBackgroundColor="@color/dark_reply_blue"
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
             android:layout_marginTop="20dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:id="@+id/perm_address"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="6. Present Address"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            android:layout_marginTop="20dp">
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"            android:layout_marginTop="20dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:id="@+id/present_addres"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -135,71 +159,89 @@
             android:layout_height="wrap_content"
             android:hint="7. Address of residence in the last 5 years"
             android:layout_marginTop="20dp"
-            app:boxBackgroundColor="@color/dark_reply_blue">
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:id="@+id/address_of_five"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="8. Phone No"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            android:layout_marginTop="20dp">
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"            android:layout_marginTop="20dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pcc_phone"
+            android:textColor="@color/white"
+            android:inputType="phone"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="9. Email ID"
-            app:boxBackgroundColor="@color/dark_reply_blue"
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
             android:layout_marginTop="20dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pcc_email"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="10.  Purpose of visit"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            android:layout_marginTop="20dp">
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"            android:layout_marginTop="20dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/purpose_of_visit"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            android:hint="11.  Name,address with phone no. of a reference person "
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"            android:hint="11.  Name,address with phone no. of a reference person "
             android:layout_marginTop="20dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:id="@+id/name_address"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/dark_reply_blue"
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="20dp"
             android:hint="12.  Criminal cases involved in Police Station,Case No.,Section of Law,brief of alllegations,under investigation or under trial "
-            android:layout_marginTop="20dp">
+            >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:id="@+id/criminal_cases"
+            android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
@@ -225,8 +267,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Submit"
+            android:backgroundTint="@color/brown"
             android:onClick="pccSubmitClick"
-            android:textColor="#000"
+            android:textColor="#fff"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 </ScrollView>

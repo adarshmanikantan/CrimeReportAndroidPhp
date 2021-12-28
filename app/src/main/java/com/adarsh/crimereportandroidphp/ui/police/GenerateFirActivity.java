@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.adarsh.crimereportandroidphp.R;
@@ -15,6 +17,7 @@ import com.adarsh.crimereportandroidphp.retrofit.network.Api;
 import com.adarsh.crimereportandroidphp.retrofit.network.ApiClient;
 import com.adarsh.crimereportandroidphp.ui.citizen.complaint.FileComplaintActivity;
 import com.adarsh.crimereportandroidphp.ui.citizen.complaint.ViewFirActivity;
+import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -32,7 +35,7 @@ public class GenerateFirActivity extends AppCompatActivity {
     private TextInputEditText firTimeField;
     private TextInputEditText firIpcactField;
     private TextInputEditText ipcSessionField;
-    private TextInputEditText dayField;
+    private MaterialAutoCompleteTextView dayField;
     private TextInputEditText timeFromField;
     private TextInputEditText timeToField;
     private TextInputEditText dateFromField;
@@ -43,6 +46,7 @@ public class GenerateFirActivity extends AppCompatActivity {
     private TextInputEditText distanceField;
     private TextInputEditText beatNoField;
     private TextInputEditText addressEdt;
+    String selection="Sunday";
     private TextInputEditText complaintdetailsField;
     String firNumber,firDate, firTime, firIpcAct, firIpcSection, days, timeFrom, timeTo, dateFrom, dateTo, diaryEntry, diaryEntryTime, type, distance, beatNo, address, complaintDetails;
 
@@ -51,6 +55,23 @@ public class GenerateFirActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_fir);
         initView();
+
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(
+                this, R.layout.dropdownlayout, getResources()
+                .getStringArray(R.array.days_arrays));
+        // districtsArray=loadPoliceStations("Thiruvananthapuram");
+        // Toast.makeText(this,districtsArray[0], Toast.LENGTH_SHORT).show();
+        dayField.setAdapter(arrayAdapter);
+        dayField.setCursorVisible(false);
+        dayField.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                dayField.showDropDown();
+                selection = (String) parent.getItemAtPosition(position);
+            }
+        });
+
     }
 
     public void nextClick(View view) {

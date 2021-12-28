@@ -3,6 +3,8 @@ package com.adarsh.crimereportandroidphp.ui.citizen;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
@@ -109,35 +111,53 @@ public class SignUpActivity extends AppCompatActivity {
         //  regSubdistrict = findViewById(R.id.reg_subdistrict);
         regState = findViewById(R.id.reg_state);
     }
+    public static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
 
     public void signupClick(View view) {
         TextInputEditText[] fields = {regEmail, regPhn, regPass, regConfirmpass, regName, regGender, regYob, regCareOf, regHouseName, regStreet, regVillageTehsil, regPostcode, regDistrict, regState};
-        if (validate(fields)) {
-            showProgressDialog(getApplicationContext(),"Loading...","Please wait!",getResources().getDrawable(R.drawable.clock),false);
 
-            Api api = ApiClient.Citizen().create(Api.class);
-            api.REGISTRATION_MODEL_CALL(nameString, regPhn.getText().toString(), regEmail.getText().toString(), regPass.getText().toString(), "123", genderString, yobString, careOfString, houseString, streetString, villageTehsilString, postCodeString, districtString, stateString).enqueue(new Callback<RegistrationModel>() {
-                @Override
-                public void onResponse(Call<RegistrationModel> call, Response<RegistrationModel> response) {
-                    RegistrationModel registrationModel = response.body();
-                    if (registrationModel.getStatus().equalsIgnoreCase("success")) {
-                        dismissProgressDialog();
-                        showToast(getApplicationContext(), "Registration Success");
-                        startActivity(new Intent(getApplicationContext(), LoginHome.class));
-                    } else {
-                        dismissProgressDialog();
-                        showToast(getApplicationContext(), "Registration failed");
+         if(!(isValidEmail(regEmail.getText().toString()))) {
+            showToast(getApplicationContext(),"Enter valid email");
+        }
+        else if(!(regPhn.getText().toString().length()==10))
+        {
+            showToast(getApplicationContext(),"Enter valid phone number");
+        }
+        else if(regPass.getText().toString().length()<6)
+        {
+            showToast(getApplicationContext(),"Password requires atleast 6 characters");
+        }
+        else if(! (regPass.getText().toString().equals(regConfirmpass.getText().toString())))
+        {
+            showToast(getApplicationContext(),"Passwords not matching");
+        }
+
+        else{
+                showProgressDialog(getApplicationContext(),"Loading...","Please wait!",getResources().getDrawable(R.drawable.clock),false);
+
+                Api api = ApiClient.Citizen().create(Api.class);
+                api.REGISTRATION_MODEL_CALL(nameString, regPhn.getText().toString(), regEmail.getText().toString(), regPass.getText().toString(), "123", genderString, yobString, careOfString, houseString, streetString, villageTehsilString, postCodeString, districtString, stateString).enqueue(new Callback<RegistrationModel>() {
+                    @Override
+                    public void onResponse(Call<RegistrationModel> call, Response<RegistrationModel> response) {
+                        RegistrationModel registrationModel = response.body();
+                        if (registrationModel.getStatus().equalsIgnoreCase("success")) {
+                            dismissProgressDialog();
+                            showToast(getApplicationContext(), "Registration Success");
+                            startActivity(new Intent(getApplicationContext(), LoginHome.class));
+                        } else {
+                            dismissProgressDialog();
+                            showToast(getApplicationContext(), "Registration failed");
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<RegistrationModel> call, Throwable t) {
-                    dismissProgressDialog();
-                    showToast(getApplicationContext(), t.getMessage());
-                }
-            });
-        } else {
-            Toast.makeText(this, "Enter all values", Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onFailure(Call<RegistrationModel> call, Throwable t) {
+                        dismissProgressDialog();
+                        showToast(getApplicationContext(), t.getMessage());
+                    }
+                });
+            }
         }
     }
-}

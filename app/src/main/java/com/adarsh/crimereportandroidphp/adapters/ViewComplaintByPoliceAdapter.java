@@ -28,7 +28,7 @@ public class ViewComplaintByPoliceAdapter extends RecyclerView.Adapter<ViewCompl
     @Override
     public ComplaintViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_shimmer_layout, parent, false);
+                .inflate(R.layout.complaint_list_item_shimmer_layout, parent, false);
         return new ViewComplaintByPoliceAdapter.ComplaintViewHolder(itemView);
     }
 
@@ -49,6 +49,9 @@ public class ViewComplaintByPoliceAdapter extends RecyclerView.Adapter<ViewCompl
                 String date_time = viewComplaintModel.getComplaint_details()[position].getDate_time();
                 String details = viewComplaintModel.getComplaint_details()[position].getDetails();
                 String verify = viewComplaintModel.getComplaint_details()[position].getVerify();
+                String username=viewComplaintModel.getComplaint_details()[position].getUser_name();
+                String email=viewComplaintModel.getComplaint_details()[position].getEmail();
+                String phone=viewComplaintModel.getComplaint_details()[position].getPhone();
                 if (!(null == viewComplaintModel.getComplaint_details()[position].getFir_id())) {
                     firId = viewComplaintModel.getComplaint_details()[position].getFir_id();
                 }
@@ -64,7 +67,9 @@ public class ViewComplaintByPoliceAdapter extends RecyclerView.Adapter<ViewCompl
                 editor.putString("details", details);
                 editor.putString("verify", verify);
                 editor.putString("firId",firId);
-
+                editor.putString("username",username);
+                editor.putString("email",email);
+                editor.putString("phone",phone);
                 editor.apply();
                 editor.commit();
                 Intent i = new Intent(context, EncryptedPoliceComplaintActivity.class);

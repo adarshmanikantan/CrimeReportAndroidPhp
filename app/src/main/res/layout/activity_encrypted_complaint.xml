@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_reply_blue"
+    android:background="#000"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:id="@+id/file_complaint_layout"
@@ -22,8 +22,9 @@
             android:hint="   District"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            app:hintTextColor="@color/secondary_color_orange"
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="#fff"
+            android:textColorHint="#fff"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -38,8 +39,9 @@
             android:layout_height="wrap_content"
             android:hint="   Police Station"
             android:layout_marginBottom="15dp"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            app:hintTextColor="@color/secondary_color_orange"
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="#fff"
+            android:textColorHint="#fff"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -52,13 +54,13 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            app:hintTextColor="@color/secondary_color_orange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Complaint Type"
             android:layout_marginBottom="15dp"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            >
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="#fff"
+            android:textColorHint="#fff"            >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/view_complaint_type"
                 android:layout_width="match_parent"
@@ -68,13 +70,13 @@
                 />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            app:hintTextColor="@color/secondary_color_orange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Place of Occurence"
             android:layout_marginBottom="15dp"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            >
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="#fff"
+            android:textColorHint="#fff"            >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,15 +92,15 @@
             android:weightSum="1"
             >
             <com.google.android.material.textfield.TextInputLayout
-                app:hintTextColor="@color/secondary_color_orange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:hint="Date"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="15dp"
-                app:boxBackgroundColor="@color/dark_reply_blue"
-                >
+                app:boxBackgroundColor="@color/brown"
+                app:hintTextColor="#fff"
+                android:textColorHint="#fff"                >
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -108,13 +110,14 @@
                     />
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
-                app:hintTextColor="@color/secondary_color_orange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Time"
+                app:boxBackgroundColor="@color/brown"
+                app:hintTextColor="#fff"
+                android:textColorHint="#fff"
                 android:layout_weight="0.5"
                 android:layout_marginBottom="15dp"
-                app:boxBackgroundColor="@color/dark_reply_blue"
                 >
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -128,12 +131,12 @@
 
         </LinearLayout>
         <com.google.android.material.textfield.TextInputLayout
-            app:hintTextColor="@color/secondary_color_orange"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:hint="Complaint Details"
-            app:boxBackgroundColor="@color/dark_reply_blue"
-            >
+            app:boxBackgroundColor="@color/brown"
+            app:hintTextColor="#fff"
+            android:textColorHint="#fff"            >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -147,6 +150,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Decrypt"
+            android:backgroundTint="#fff"
+            android:textColor="#000"
             android:onClick="decryptComplaint"
             />
 
@@ -156,6 +161,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="View FIR"
+            android:backgroundTint="#fff"
+            android:textColor="#000"
             android:visibility="gone"
             />
     </LinearLayout>

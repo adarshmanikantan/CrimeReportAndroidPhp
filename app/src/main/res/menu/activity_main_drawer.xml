@@ -6,24 +6,28 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_complaint"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_baseline_arrow_forward_ios_24"
             android:title="@string/menu_complaint"
             />
         <item
             android:id="@+id/nav_pcc"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_baseline_arrow_forward_ios_24"
             android:title="@string/menu_pcc" />
         <item
             android:id="@+id/nav_ipc"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_baseline_arrow_forward_ios_24"
             android:title="@string/menu_ipc" />
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_baseline_arrow_forward_ios_24"
             android:title="@string/menu_profile" />
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_baseline_arrow_forward_ios_24"
             android:title="@string/menu_about" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:title="Logout" />
     </group>
 </menu>

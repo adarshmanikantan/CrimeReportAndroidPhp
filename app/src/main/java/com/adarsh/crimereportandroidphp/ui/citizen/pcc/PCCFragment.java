@@ -2,6 +2,7 @@ package com.adarsh.crimereportandroidphp.ui.citizen.pcc;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +24,7 @@ import com.adarsh.crimereportandroidphp.retrofit.models.ViewPccByCitizenModel;
 import com.adarsh.crimereportandroidphp.retrofit.network.Api;
 import com.adarsh.crimereportandroidphp.retrofit.network.ApiClient;
 import com.adarsh.crimereportandroidphp.util.UtilClass;
+import com.todkars.shimmer.ShimmerRecyclerView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,12 +34,16 @@ import retrofit2.Response;
 public class PCCFragment extends Fragment {
 
     LinearLayout requestpcc;
-    RecyclerView pccRecyclerView;
+    ShimmerRecyclerView pccRecyclerView;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_pcc, container, false);
+        Toolbar toolbar=getActivity().findViewById(R.id.toolbar);
+        toolbar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
+
         requestpcc=root.findViewById(R.id.requestpcclayout);
         pccRecyclerView=root.findViewById(R.id.pcc_recyclerview);
+        pccRecyclerView.showShimmer();
 
         requestpcc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +58,7 @@ public class PCCFragment extends Fragment {
             @Override
             public void onResponse(Call<ViewPccByCitizenModel> call, Response<ViewPccByCitizenModel> response) {
                 ViewPccByCitizenModel viewPccByCitizenModel=response.body();
+                pccRecyclerView.hideShimmer();
                 if(viewPccByCitizenModel.getStatus().equalsIgnoreCase("success"))
                 {
                     LinearLayoutManager layoutManager=new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
@@ -66,6 +74,7 @@ public class PCCFragment extends Fragment {
 
             @Override
             public void onFailure(Call<ViewPccByCitizenModel> call, Throwable t) {
+                pccRecyclerView.hideShimmer();
                 Toast.makeText(getActivity(),t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

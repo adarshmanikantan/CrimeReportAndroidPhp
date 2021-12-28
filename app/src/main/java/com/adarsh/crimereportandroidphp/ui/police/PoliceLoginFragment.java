@@ -1,5 +1,7 @@
 package com.adarsh.crimereportandroidphp.ui.police;
 
+import static com.adarsh.crimereportandroidphp.util.UtilClass.showToast;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,6 +21,7 @@ import com.adarsh.crimereportandroidphp.R;
 import com.adarsh.crimereportandroidphp.retrofit.models.Police_Login_Model;
 import com.adarsh.crimereportandroidphp.retrofit.network.Api;
 import com.adarsh.crimereportandroidphp.retrofit.network.ApiClient;
+import com.adarsh.crimereportandroidphp.ui.LoginHome;
 import com.google.android.material.textfield.TextInputEditText;
 
 import retrofit2.Call;
@@ -44,10 +47,10 @@ public class PoliceLoginFragment extends Fragment {
                 String pass = pswd.getText().toString();
 
                 if (TextUtils.isEmpty(username.getText())) {
-                    username.setError("REQUIRED");
+                    showToast(getContext(),"All fields are required");
                 }
-                if (TextUtils.isEmpty(pswd.getText())) {
-                    pswd.setError("REQUIRED");
+                else if (TextUtils.isEmpty(pswd.getText())) {
+                    showToast(getContext(),"All fields are required");
                 }
                 else {
                     Api api = ApiClient.Citizen().create(Api.class);
@@ -68,7 +71,12 @@ public class PoliceLoginFragment extends Fragment {
                                 editor.putString("code",search_police_login_model.getStation_details().getCode());
                                 editor.commit();
 
-                                Intent i = new Intent(getContext(), PoliceHome.class);
+                                SharedPreferences sp = getContext().getSharedPreferences("session_manager", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor edit = sp.edit();
+                                edit.putBoolean("session", true);
+                                edit.putString("user", "police");
+                                edit.commit();
+                                Intent i=new Intent(getActivity(), PoliceHome.class);
                                 startActivity(i);
 
                             } else {

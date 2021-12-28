@@ -1,49 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="30dp"
+    android:layout_marginBottom="30dp"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/orangebg"
+        android:scaleType="centerCrop"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:padding="10dp"
     android:orientation="vertical"
-    android:background="@color/primary_reply_blue"
-    android:weightSum="1"
     android:layout_marginBottom="10dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-<TextView
-    android:id="@+id/complaint_type_tv"
-    android:layout_width="0dp"
-    android:layout_height="match_parent"
-    android:text="Vehicle Theft"
+
+<LinearLayout
+    android:id="@+id/complaint_type_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:gravity="center"
-    android:textSize="20sp"
-    android:textColor="#fff"
-    android:layout_weight="0.5"
-    android:layout_centerInParent="true"/>
+    >
+    <TextView
+        android:id="@+id/complaint_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Vehicle Theft"
+        android:textColor="#FFF"
+        android:fontFamily="@font/roboto_slab"
+        android:layout_marginRight="10dp"
+        android:textSize="15sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#fff"
+        android:layout_toRightOf="@id/complaint_type_tv"/>
+
+</LinearLayout>
+
     <TextView
         android:id="@+id/complaint_date_tv"
-        android:layout_width="0dp"
-        android:gravity="center"
-        android:text="27\n02\n2021"
-        android:textSize="30sp"
-        android:textColor="@color/secondary_color_orange"
-        android:layout_height="match_parent"
-        android:layout_weight="0.5"
-        />
-</LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        tools:text="10/7/2021" />
+
     <TextView
         android:id="@+id/verify_status_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FF0000"
-        android:layout_gravity="center_horizontal"
-        tools:text="Your complaint will be verified soon"/>
-    </LinearLayout>
-</LinearLayout>
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_slab"
+        android:textColor="#000"
+        tools:text="Your complaint will be verified soon" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -12,13 +12,14 @@
         android:layout_height="match_parent"
         android:background="#fff"
         android:layout_marginBottom="70dp">
+
         <ImageView
             android:id="@+id/imgview"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/tamilnadu"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            android:layout_centerHorizontal="true"/>
+            android:src="@drawable/kplogo" />
         <TextView
             android:id="@+id/fir"
             android:layout_width="wrap_content"

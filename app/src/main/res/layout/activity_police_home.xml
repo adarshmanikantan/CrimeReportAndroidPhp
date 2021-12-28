@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.police.PoliceHome"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:paddingTop="20dp">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:cardBackgroundColor="@color/dark_reply_blue"
+        android:layout_height="150dp"
         app:cardElevation="1dp"
+        app:cardCornerRadius="20dp"
         android:onClick="viewComplaintClick"
         android:layout_marginBottom="30dp"
         app:rippleColor="@color/primary_reply_blue"
         >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bluebg"
+            android:scaleType="centerCrop"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -35,35 +40,62 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="View Complaints"
-                android:textColor="@color/secondary_color_orange"/>
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:fontFamily="@font/roboto_slab"/>
         </LinearLayout>
+        </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         app:cardBackgroundColor="@color/dark_reply_blue"
         app:cardElevation="1dp"
+        app:cardCornerRadius="20dp"
         android:onClick="viewPccClick"
         android:layout_marginBottom="30dp"
         app:rippleColor="@color/primary_reply_blue"
         >
-        <LinearLayout
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/complaint"
-                android:layout_marginRight="30dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="View Complaints"
-                android:textColor="@color/secondary_color_orange"/>
-        </LinearLayout>
+            android:src="@drawable/orngbg"
+            android:scaleType="centerCrop"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="30dp"
+                    android:src="@drawable/complaint" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View PCC Requests"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_slab" />
+            </LinearLayout>
+        </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
+        android:text="logout"
+        android:id="@+id/logout"
+        android:onClick="logoutClick"
+        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:textColor="@color/white"
+        android:layout_gravity="bottom|right"
+        />
 </LinearLayout>
-</ScrollView>

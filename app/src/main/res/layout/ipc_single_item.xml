@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="20dp"
+    android:layout_marginBottom="30dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="@color/primary_reply_blue">
+    android:background="@drawable/gradient_bg"
+    >
 
     <TextView
         android:id="@+id/section_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/playfair_display_sc"
-        android:text="SECTION 4"
+        android:fontFamily="@font/roboto_slab"
+        tools:text="SECTION 4"
         android:textColor="#fff"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/title"
@@ -21,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/biorhyme"
-        android:text="Extension of Code to extra-territorial offences"
+        tools:text="Extension of Code to extra-territorial offences"
         android:textColor="#FFF"
         android:textSize="20sp" />
     <View
@@ -35,6 +43,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#fff"
-        android:fontFamily="@font/biorhyme"
-        android:text="The provisions of this Code apply also to any offence committed by:\r\n\r\nany citizen of India in any place without and beyond India;\r\nany person on any ship or aircraft registered in India wherever it may be.\r\nExplanations\r\n\r\nIn this section the word “offence” includes every act committed outside India which, if committed in India would be punishable under this Code\r\nIllustrations\r\n\r\nA, who is a citizen of India, commits a murder in Uganda. He can be tried and convicted of murder in any place in India in which he may be found"/>
+        android:textSize="15sp"
+        android:fontFamily="@font/roboto_slab"
+        tools:text="The provisions of this Code apply also to any offence committed by:\r\n\r\nany citizen of India in any place without and beyond India;\r\nany person on any ship or aircraft registered in India wherever it may be.\r\nExplanations\r\n\r\nIn this section the word “offence” includes every act committed outside India which, if committed in India would be punishable under this Code\r\nIllustrations\r\n\r\nA, who is a citizen of India, commits a murder in Uganda. He can be tried and convicted of murder in any place in India in which he may be found"/>
 </LinearLayout>
+</androidx.cardview.widget.CardView>

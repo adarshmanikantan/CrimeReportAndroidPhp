@@ -7,6 +7,7 @@ import com.adarsh.crimereportandroidphp.retrofit.models.GenerateFirModel;
 import com.adarsh.crimereportandroidphp.retrofit.models.Police_Login_Model;
 import com.adarsh.crimereportandroidphp.retrofit.models.RegistrationModel;
 import com.adarsh.crimereportandroidphp.retrofit.models.RootLoginModel;
+import com.adarsh.crimereportandroidphp.retrofit.models.SearchIpcModel;
 import com.adarsh.crimereportandroidphp.retrofit.models.VerifyComplaintModel;
 import com.adarsh.crimereportandroidphp.retrofit.models.VerifyPccModel;
 import com.adarsh.crimereportandroidphp.retrofit.models.ViewComplaintByStationModel;
@@ -85,6 +86,10 @@ public interface Api {
 
     @GET("getallSection.php")
     Call<ViewIpcModel>VIEW_IPC_MODEL_CALL();
+
+    @GET("search_section.php?")
+    Call<SearchIpcModel>SEARCH_IPC_MODEL_CALL(@Query("description")String query);
+
 }
 
 

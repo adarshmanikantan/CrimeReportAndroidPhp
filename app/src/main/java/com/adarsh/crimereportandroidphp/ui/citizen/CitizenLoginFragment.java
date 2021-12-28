@@ -3,6 +3,8 @@ package com.adarsh.crimereportandroidphp.ui.citizen;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +54,12 @@ public class CitizenLoginFragment extends Fragment {
             public void onClick(View view) {
                 if (isEmpty(loginEmailEdt) && isEmpty(loginPasswordEdt)) {
                     showToast(getContext(), "Enter values");
-                } else {
+                }
+                else if(!(isValidEmail(loginEmailEdt.getText().toString())))
+                {
+                    showToast(getContext(),"Enter valid email address");
+                }
+                else {
                     showProgressDialog(getContext(),"Loading...","Please wait!",getResources().getDrawable(R.drawable.clock),false);
                     Api api = ApiClient.Citizen().create(Api.class);
                     api.ROOT_LOGIN_MODEL_CALL(loginEmailEdt.getText().toString(), loginPasswordEdt.getText().toString()).enqueue(new Callback<RootLoginModel>() {
@@ -62,9 +69,15 @@ public class CitizenLoginFragment extends Fragment {
                             RootLoginModel rootLoginModel = response.body();
                             if (rootLoginModel.getStatus().equalsIgnoreCase("success")) {
                                 dismissProgressDialog();
+                                shareData(rootLoginModel);
+                                SharedPreferences sharedPreferences = getContext().getSharedPreferences("session_manager", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putBoolean("session", true);
+                                editor.putString("user", "citizen");
+                                editor.commit();
                                 showToast(getContext(), "Login Success");
                                 intent(getContext(), CitizenHome.class,0);
-                                shareData(rootLoginModel);
+
                             }
                             else
                             {
@@ -94,14 +107,15 @@ public class CitizenLoginFragment extends Fragment {
         });
         return root;
     }
-
+    public static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
     private void shareData(RootLoginModel rootLoginModel) {
         SharedPreferences sharedPreferences = getContext().getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Toast.makeText(getContext(),rootLoginModel.getUser_data().getUser_id(), Toast.LENGTH_SHORT).show();
         editor.putString("loginid", rootLoginModel.getUser_data().getUser_id());
-        editor.putString("firstname", rootLoginModel.getUser_data().getFirstname());
-        editor.putString("lastname", rootLoginModel.getUser_data().getLastname());
+        editor.putString("firstname", rootLoginModel.getUser_data().getName());
         editor.putString("email", rootLoginModel.getUser_data().getEmail());
         editor.putString("password", rootLoginModel.getUser_data().getPassword());
         editor.putString("adhar", rootLoginModel.getUser_data().getAdhar());
@@ -109,10 +123,10 @@ public class CitizenLoginFragment extends Fragment {
         editor.putString("gender", rootLoginModel.getUser_data().getGender());
         editor.putString("year", rootLoginModel.getUser_data().getYear());
         editor.putString("careof", rootLoginModel.getUser_data().getCare_of());
-        editor.putString("hname", rootLoginModel.getUser_data().getHname());
+        editor.putString("hname", rootLoginModel.getUser_data().getHouse_name());
         editor.putString("street", rootLoginModel.getUser_data().getStreet());
-        editor.putString("village", rootLoginModel.getUser_data().getVillage());
-        editor.putString("postcode", rootLoginModel.getUser_data().getPostcode());
+        editor.putString("village", rootLoginModel.getUser_data().getVillege());
+        editor.putString("postcode", rootLoginModel.getUser_data().getPost_code());
         editor.putString("district", rootLoginModel.getUser_data().getDistrict());
         editor.putString("state", rootLoginModel.getUser_data().getState());
         editor.apply();

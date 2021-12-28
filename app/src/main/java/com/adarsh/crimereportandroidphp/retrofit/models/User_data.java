@@ -2,132 +2,190 @@ package com.adarsh.crimereportandroidphp.retrofit.models;
 
 public class User_data
 {
-    private String user_id;
+    private String villege;
 
-    private String firstname;
-
-    private String lastname;
-
-    private String email;
-
-    private String password;
-
-    private String adhar;
-
-    private String phone;
+    private String care_of;
 
     private String gender;
 
     private String year;
 
-    private String care_of;
+    private String password;
 
-    private String hname;
+    private String adhar;
+
+    private String user_id;
+
+    private String phone;
+
+    private String house_name;
 
     private String street;
 
-    private String village;
-
-    private String postcode;
+    private String post_code;
 
     private String district;
 
+    private String name;
+
     private String state;
 
-    public void setUser_id(String user_id){
-        this.user_id = user_id;
+    private String email;
+
+    public String getVillege ()
+    {
+        return villege;
     }
-    public String getUser_id(){
-        return this.user_id;
+
+    public void setVillege (String villege)
+    {
+        this.villege = villege;
     }
-    public void setFirstname(String firstname){
-        this.firstname = firstname;
+
+    public String getCare_of ()
+    {
+        return care_of;
     }
-    public String getFirstname(){
-        return this.firstname;
-    }
-    public void setLastname(String lastname){
-        this.lastname = lastname;
-    }
-    public String getLastname(){
-        return this.lastname;
-    }
-    public void setEmail(String email){
-        this.email = email;
-    }
-    public String getEmail(){
-        return this.email;
-    }
-    public void setPassword(String password){
-        this.password = password;
-    }
-    public String getPassword(){
-        return this.password;
-    }
-    public void setAdhar(String adhar){
-        this.adhar = adhar;
-    }
-    public String getAdhar(){
-        return this.adhar;
-    }
-    public void setPhone(String phone){
-        this.phone = phone;
-    }
-    public String getPhone(){
-        return this.phone;
-    }
-    public void setGender(String gender){
-        this.gender = gender;
-    }
-    public String getGender(){
-        return this.gender;
-    }
-    public void setYear(String year){
-        this.year = year;
-    }
-    public String getYear(){
-        return this.year;
-    }
-    public void setCare_of(String care_of){
+
+    public void setCare_of (String care_of)
+    {
         this.care_of = care_of;
     }
-    public String getCare_of(){
-        return this.care_of;
+
+    public String getGender ()
+    {
+        return gender;
     }
-    public void setHname(String hname){
-        this.hname = hname;
+
+    public void setGender (String gender)
+    {
+        this.gender = gender;
     }
-    public String getHname(){
-        return this.hname;
+
+    public String getYear ()
+    {
+        return year;
     }
-    public void setStreet(String street){
+
+    public void setYear (String year)
+    {
+        this.year = year;
+    }
+
+    public String getPassword ()
+    {
+        return password;
+    }
+
+    public void setPassword (String password)
+    {
+        this.password = password;
+    }
+
+    public String getAdhar ()
+    {
+        return adhar;
+    }
+
+    public void setAdhar (String adhar)
+    {
+        this.adhar = adhar;
+    }
+
+    public String getUser_id ()
+    {
+        return user_id;
+    }
+
+    public void setUser_id (String user_id)
+    {
+        this.user_id = user_id;
+    }
+
+    public String getPhone ()
+    {
+        return phone;
+    }
+
+    public void setPhone (String phone)
+    {
+        this.phone = phone;
+    }
+
+    public String getHouse_name ()
+    {
+        return house_name;
+    }
+
+    public void setHouse_name (String house_name)
+    {
+        this.house_name = house_name;
+    }
+
+    public String getStreet ()
+    {
+        return street;
+    }
+
+    public void setStreet (String street)
+    {
         this.street = street;
     }
-    public String getStreet(){
-        return this.street;
+
+    public String getPost_code ()
+    {
+        return post_code;
     }
-    public void setVillage(String village){
-        this.village = village;
+
+    public void setPost_code (String post_code)
+    {
+        this.post_code = post_code;
     }
-    public String getVillage(){
-        return this.village;
+
+    public String getDistrict ()
+    {
+        return district;
     }
-    public void setPostcode(String postcode){
-        this.postcode = postcode;
-    }
-    public String getPostcode(){
-        return this.postcode;
-    }
-    public void setDistrict(String district){
+
+    public void setDistrict (String district)
+    {
         this.district = district;
     }
-    public String getDistrict(){
-        return this.district;
+
+    public String getName ()
+    {
+        return name;
     }
-    public void setState(String state){
+
+    public void setName (String name)
+    {
+        this.name = name;
+    }
+
+    public String getState ()
+    {
+        return state;
+    }
+
+    public void setState (String state)
+    {
         this.state = state;
     }
-    public String getState(){
-        return this.state;
+
+    public String getEmail ()
+    {
+        return email;
+    }
+
+    public void setEmail (String email)
+    {
+        this.email = email;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "ClassPojo [villege = "+villege+", care_of = "+care_of+", gender = "+gender+", year = "+year+", password = "+password+", adhar = "+adhar+", user_id = "+user_id+", phone = "+phone+", house_name = "+house_name+", street = "+street+", post_code = "+post_code+", district = "+district+", name = "+name+", state = "+state+", email = "+email+"]";
     }
 }
+

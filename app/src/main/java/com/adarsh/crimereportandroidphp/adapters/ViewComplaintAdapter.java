@@ -44,7 +44,7 @@ public class ViewComplaintAdapter extends RecyclerView.Adapter<ViewComplaintAdap
        if(viewComplaintModel.getComplaint_details()[position].getVerify().equals("0"))
        {
            holder.status.setText("Your complaint will be verified soon.");
-           holder.status.setTextColor(R.color.red);
+          // holder.status.setTextColor(R.color.red);
        }else
        {
            if(viewComplaintModel.getComplaint_details()[position].getFir_id().equals(""))
@@ -56,7 +56,7 @@ public class ViewComplaintAdapter extends RecyclerView.Adapter<ViewComplaintAdap
                holder.status.setText("FIR is generated");
 
            }
-           holder.status.setTextColor(R.color.green);
+          // holder.status.setTextColor(R.color.green);
        }
        holder.itemView.setOnClickListener(new View.OnClickListener() {
            @Override
